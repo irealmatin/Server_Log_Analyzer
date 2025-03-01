@@ -1,0 +1,16 @@
+Log Analysis Report - 2025-03-01T12:37:48.648965
+========================================
+
+Files processed: 3
+Total log entries: 88
+Error rate: 37.5%
+
+Log Type Counts:
+- INFO: 27 (30.7%)
+- ERROR: 33 (37.5%)
+- WARNING: 28 (31.8%)
+
+Most Common Error: Database connection failed (10 occurrences)
+
+Warnings:
+- Empty file: empty.log
