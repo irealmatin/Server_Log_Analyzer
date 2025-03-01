@@ -4,7 +4,6 @@ from datetime import  datetime
 from collections import defaultdict
 
 
-
 class LogAnalysisError(Exception):
     pass
 
@@ -14,6 +13,13 @@ class InvalidLogFormatError(Exception):
 
 
 def analyze_logs(log_dir, report_file):
+    """
+    Analyze server logs 
+    
+    Args:
+        log_dir: Path to directory containing log files
+        report_file: Path to output analysis report
+    """
 
     stats = {
         'processed_files': 0 ,
@@ -59,6 +65,9 @@ def analyze_logs(log_dir, report_file):
 
 
 def process_file(filepath , stats):
+    """
+    Process individual log file
+    """
 
     try:
         with open(filepath , 'r' , encoding='utf-8') as f:
@@ -108,7 +117,6 @@ def process_file(filepath , stats):
                     stats['error_messages'][message] += 1
 
             except InvalidLogFormatError as e:
-                print(f"Bad line: {line.strip()}") #DEBUGING
                 stats['warnings'].append(f"{os.path.basename(filepath)} line {line_num}: {str(e)}")
                 stats['errors']['format'] += 1
 
@@ -124,6 +132,9 @@ def process_file(filepath , stats):
 
 
 def generate_report(report_file, stats):
+    """
+    Generate analysis report
+    """
  
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
