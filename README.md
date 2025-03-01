@@ -16,7 +16,7 @@ A simple Python project that analyzes log files in a specified directory and gen
 2. Run the script:
 
    ```bash
-   python your_script.py
+   python main.py
    ```
 
 3. Check the generated `report.txt` for analysis results.
